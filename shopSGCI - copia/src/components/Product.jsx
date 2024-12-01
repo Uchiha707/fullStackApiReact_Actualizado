@@ -3,9 +3,11 @@ import React, { useState } from 'react';
 const Product = ({ product, onAddToCart }) => {
   const [quantity, setQuantity] = useState(1);
 
+  const imageURL = `http://localhost:5000/uploads/${product.imagen}`;
+
   return (
     <div className="product">
-      <img src={product.image} alt={product.name} />
+      <img src={imageURL} alt={product.name} />
       <h2>{product.name}</h2>
       <p>${product.price.toFixed(2)}</p>
       <div className="quantity-controls">
