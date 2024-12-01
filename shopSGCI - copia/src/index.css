@@ -255,3 +255,200 @@ body {
 .invoice-page p {
   margin: 1rem 0;
 }
+
+/* Estilos para el modalProducto */
+.modalProducto-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalProducto {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 400px;
+  max-width: 100%;
+  position: relative;
+  z-index: 1001;
+}
+
+.modalProducto h2 {
+  margin-top: 0;
+  text-align: center;
+}
+
+.modalProducto form label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.modalProducto form input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.modalProducto button {
+  background-color: #343a40;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-top: 1rem;
+}
+
+.modalProducto button:hover {
+  background-color: #23272b;
+}
+
+.modalProducto-close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Estilos para los mensajes de éxito y error */
+.error-message {
+  color: #dc3545;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.success-message {
+  color: #28a745;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Estilos para la gestión de productos en tabla */
+.gestionProductos {
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+.gestionProductos h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+}
+
+.gestionProductos button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-bottom: 1rem;
+  display: block;
+  margin-left: auto;
+}
+
+.gestionProductos button:hover {
+  background-color: #0056b3;
+}
+
+.gestionProductos form {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.gestionProductos form input {
+  flex: 1;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-right: 0.5rem;
+}
+
+.gestionProductos form button {
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.gestionProductos form button:hover {
+  background-color: #218838;
+}
+
+.tablaProductos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tablaProductos th, .tablaProductos td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tablaProductos th {
+  background-color: #06529e;
+  color: #fff;
+}
+
+.tablaProductos td img {
+  border-radius: 8px;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.tablaProductos td button {
+  background-color: #dc3545;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+  margin-left: 0.5rem;
+}
+
+.tablaProductos td button:hover {
+  background-color: #c82333;
+}
+
+.tablaProductos .edit-button {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.tablaProductos .edit-button:hover {
+  background-color: #e0a800;
+}
+
+.error-message, .success-message {
+  text-align: center;
+  font-weight: bold
+}
