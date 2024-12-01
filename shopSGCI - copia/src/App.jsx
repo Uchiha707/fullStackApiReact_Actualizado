@@ -8,6 +8,8 @@ import SalesReport from './components/SalesReport';
 import InvoiceForm from './components/InvoiceForm';
 import InvoicePDF from './components/InvoicePDF';
 import axios from 'axios'; // Importar axios
+import Register from './components/Register'; 
+import Login from './components/Login'; 
 
 const initialProducts = [];
 
@@ -105,6 +107,11 @@ const App = () => {
     setPaymentInfo(info);
   };
 
+  const PrivateRoute = ({ children }) => {
+    const role = localStorage.getItem('role');
+    return role === 'admin' ? children : <div>No tienes acceso a esta página</div>;
+  };
+
   return (
     <div className="app">
   
@@ -129,6 +136,8 @@ const App = () => {
         <Route path="/sales-report" element={<SalesReport data={salesData} />} />
         <Route path="/invoice" element={<InvoiceForm cartItems={cartItems} />} />
         <Route path="/invoice-pdf" element={<InvoicePDF />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/login" element={<Login />} />
         
       </Routes>
 

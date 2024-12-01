@@ -1,6 +1,7 @@
 // src/components/InvoiceForm.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 const InvoiceForm = ({ cartItems }) => {
   const [formData, setFormData] = useState({ name: '', email: '', address: '', barrio: '', municipio: '', departamento: '' });
@@ -10,11 +11,33 @@ const InvoiceForm = ({ cartItems }) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const paymentCode = Math.floor(Math.random() * 1000000);
-    console.log(cartItems); // Verificar que cartItems contiene datos
-    navigate('/invoice-pdf', { state: { ...formData, cartItems, paymentCode } });
+    const pedido = {
+      cliente: localStorage.getItem('userId'), 
+      pedido: cartItems.map(item => ({
+        producto: item.product.id,
+        cantidad: item.quantity
+      })),
+      total: cartItems.reduce((sum, item) => sum + item.product.price * item.quantity, 0), 
+      paymentCode, 
+      nombreEnvio: formData.name,
+      telefonoEnvio: formData.email, // Suponiendo que el email se usa como teléfono
+      direccionEnvio: formData.address,
+      barrioEnvio: formData.barrio,
+      municipioEnvio: formData.municipio,
+      departamentoEnvio: formData.departamento
+    };
+
+    console.log(pedido); // Añadir esta línea para verificar el objeto pedido
+
+    try {
+      await axios.post('http://localhost:5000/api/pedidos/nuevo', pedido);
+      navigate('/invoice-pdf', { state: { ...formData, cartItems, paymentCode } });
+    } catch (error) {
+      console.error('Error al enviar el pedido', error);
+    } 
   };
 
   return (
