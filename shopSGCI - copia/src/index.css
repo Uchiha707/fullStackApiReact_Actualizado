@@ -814,3 +814,138 @@ p strong {
 
 
 /****************************************************************************/
+
+/****************************************************************************/
+
+
+/***************Estilos componente UpdateUser.jsx *********************/
+
+/* Contenedor principal del formulario */
+.update-user-form {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Título del formulario */
+.update-user-form h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  font-size: 24px;
+}
+
+/* Mensajes de error */
+.update-user-form .error {
+  color: red;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Mensajes de éxito */
+.update-user-form .success {
+  color: green;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+/* Formulario */
+.update-user-form form {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centrar elementos del formulario */
+}
+
+/* Grupos de formulario */
+.update-user-form .form-group {
+  margin-bottom: 15px; /* Espaciado entre los grupos de formulario */
+  width: 100%; /* Asegurar que los grupos ocupen todo el ancho */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinear etiquetas al inicio */
+}
+
+/* Etiquetas */
+.update-user-form label {
+  margin-bottom: 5px;
+  color: #555;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  display: block; /* Hacer que las etiquetas ocupen toda la línea */
+  width: 100%;
+}
+
+/* Campos de entrada */
+.update-user-form input {
+  padding: 10px;
+  width: 100%; /* Asegurar que los inputs ocupen todo el ancho disponible */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  color: #333;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s ease;
+}
+
+/* Campos de entrada cuando están en foco */
+.update-user-form input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Botón de envío */
+.update-user-form button {
+  padding: 12px 24px; /* Ajustar padding */
+  background-color: #013220; /* Color verde oscuro */
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  width: 100%; /* Asegurar que el botón ocupe todo el ancho disponible */
+}
+
+.update-user-form button:hover {
+  background-color: #011910; /* Color del botón en hover */
+}
+
+/* Estilos responsivos */
+@media (max-width: 480px) {
+  .update-user-form {
+    margin: 20px;
+    padding: 15px;
+  }
+
+  .update-user-form h2 {
+    font-size: 20px;
+  }
+
+  .update-user-form input {
+    font-size: 14px;
+  }
+
+  .update-user-form button {
+    font-size: 14px;
+  }
+}
+
+/* Estilos específicos para el enlace de bienvenida dentro del span */
+span a {
+  color: white; /* Color del texto */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-weight: bold; /* Hacer que el texto sea negrita */
+  padding: 0 10px; /* Añade padding a los lados */
+}
+
+span a:hover {
+  color: #ff9800; /* Color del texto al pasar el cursor */
+}
+
+/****************************************************************************/
