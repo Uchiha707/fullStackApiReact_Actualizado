@@ -559,3 +559,258 @@ p strong {
 }
 
 /**************************************************************/
+
+/**************************************************************/
+
+
+
+
+/***************Estilos componente MangeOrders y ModalOrders.jsx *********************/
+
+/* Estilos generales para el contenedor principal */
+.gestionar-pedidos-contenedor {
+  max-width: 1200px; /* Ajusta el ancho máximo */
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos para la barra de búsqueda */
+.buscar-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+/* Estilos para la lista de pedidos */
+.pedidos-lista {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Añade un espacio entre las tarjetas */
+  justify-content: center;
+}
+
+/* Estilos para cada tarjeta de pedido */
+.pedido-tarjeta {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: calc(28% - 20px); /* Ajusta el ancho de la tarjeta */
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.pedido-tarjeta:hover {
+  transform: translateY(-5px);
+  background-color: #f9f9f9; /* Un gris muy claro */
+}
+
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  .pedido-tarjeta {
+    width: 100%; /* Ancho completo para dispositivos móviles */
+  }
+}
+
+/***** Estilos para el modal: ModalOrders.jsx *****/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilos para el contenido del modal */
+.modal-contenido {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 700px;
+  position: relative;
+}
+
+/* Estilos para el botón de cerrar */
+.cerrar-boton {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #000000; /* Color de fondo negro */
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  color: #fff; /* Color de texto blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  width: 40px; /* Ancho del botón */
+  height: 30px; /* Alto del botón */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease; /* Transición suave para la transformación */
+}
+
+.cerrar-boton:hover {
+  transform: scale(1.2); /* Agrandar el botón */
+}
+
+/* Estilos para el encabezado del modal */
+.modal-contenido h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+/* Estilos para las filas del formulario */
+.form-fila {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+  gap: 10px;
+}
+
+/* Estilos para las columnas del formulario */
+.form-columna {
+  flex: 1;
+  min-width: 150px;
+}
+
+.form-columna label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.form-columna input,
+.form-columna select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+/* Estilos para la fila de botones */
+.boton-fila {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.boton-fila button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.boton-fila button:first-of-type {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.boton-fila button:nth-of-type(2) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.boton-fila button:hover {
+  opacity: 0.9;
+}
+
+/* Estilos para el estado */
+.estado {
+  font-weight: bold;
+}
+
+.estado-pendiente {
+  color: #ffa500; /* Color naranja */
+}
+
+.estado-pagado {
+  color: #008000; /* Color verde */
+}
+
+.estado-enviado {
+  color: #0000ff; /* Color azul */
+}
+
+/**** Estilos para el modal de confirmación, del ModalOrders.jsx ****/
+.modal-confirmacion {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-contenido-confirmacion {
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+  text-align: center;
+}
+
+.confirmacion-logo {
+  font-size: 50px;
+  color: #dc3545;
+  margin-bottom: 20px;
+}
+
+.confirmacion-mensaje {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.boton-confirmacion-fila {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+}
+
+.boton-confirmacion-fila button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.boton-confirmacion-fila button:first-of-type {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.boton-confirmacion-fila button:nth-of-type(2) {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.boton-confirmacion-fila button:hover {
+  opacity: 0.9;
+}
+
+
+/****************************************************************************/
