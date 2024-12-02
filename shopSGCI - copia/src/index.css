@@ -452,3 +452,110 @@ body {
   text-align: center;
   font-weight: bold
 }
+
+/***************Estilos componente Pedidos.jsx *********************/
+
+/* Contenedor principal de los pedidos */
+.pedidos-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Tarjeta individual de cada pedido */
+.pedido-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.pedido-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Encabezado y pie de la tarjeta de pedido */
+.pedido-header, .pedido-footer {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+/* Párrafos dentro del encabezado, pie y cuerpo de la tarjeta de pedido */
+.pedido-header p, .pedido-footer p, .pedido-body p {
+  margin: 6px 0; /* Incrementado el margen para mayor separación */
+  font-size: 14px;
+}
+
+/* Títulos dentro del cuerpo y pie de la tarjeta de pedido */
+.pedido-body h3, .pedido-footer h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 18px;
+  color: #333;
+}
+
+/* Elemento individual de producto dentro de la tarjeta de pedido */
+.pedido-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.product-image {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  margin-right: 15px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+/* Párrafos dentro de los detalles del producto */
+.item-details p {
+  margin: 2px 0;
+  font-size: 14px;
+}
+
+/* Título principal de la página de pedidos */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Estilo para texto en negrita */
+p strong {
+  color: #555;
+}
+
+/* Clase general para el estado del pedido */
+.estado {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.estado.pendiente {
+  color: #d9534f;
+  background-color: #f2dede;
+}
+
+.estado.pagado {
+  color: #5cb85c;
+  background-color: #dff0d8;
+}
+
+.estado.enviado {
+  color: #5bc0de;
+  background-color: #d9edf7;
+}
+
+/**************************************************************/

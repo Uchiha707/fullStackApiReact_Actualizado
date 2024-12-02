@@ -30,7 +30,7 @@ const Header = ({ cartCount }) => {
 
   return (
     <header className="header">
-      <h1>GestorPro</h1>
+      <h1>SGCI</h1>
       <nav>
         <Link to="/">Inicio</Link>
         <Link to="/cart">Carrito ({cartCount})</Link>
