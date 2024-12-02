@@ -33,7 +33,7 @@ const InvoiceForm = ({ cartItems }) => {
     console.log(pedido); // Añadir esta línea para verificar el objeto pedido
 
     try {
-      await axios.post('http://localhost:5000/api/pedidos/nuevo', pedido);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/pedidos/nuevo`, pedido);
       navigate('/invoice-pdf', { state: { ...formData, cartItems, paymentCode } });
     } catch (error) {
       console.error('Error al enviar el pedido', error);

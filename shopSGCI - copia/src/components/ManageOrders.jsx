@@ -15,7 +15,7 @@ const ManageOrders = () => {
     const fetchOrders = async () => {
       try {
         // Realiza una solicitud GET a la API para obtener los pedidos
-        const response = await axios.get('http://localhost:5000/api/pedidos');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pedidos`);
         // Ordena los pedidos por fecha de creación en orden descendente
         const sortedOrders = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         setOrders(sortedOrders); // Actualiza el estado de los pedidos

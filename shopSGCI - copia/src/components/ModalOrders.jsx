@@ -6,7 +6,7 @@ const ModalOrders = ({ order, setSelectedOrder, setOrders, setFilteredOrders, or
 
   const handleUpdateOrder = async (updatedOrder) => {
     try {
-      const response = await axios.put(`http://localhost:5000/api/pedidos/${updatedOrder._id}`, updatedOrder);
+      const response = await axios.put(`${import.meta.env.VITE_API_URL}/api/pedidos/${updatedOrder._id}`, updatedOrder);
       setOrders(orders.map(o => (o._id === updatedOrder._id ? response.data : o)));
       setFilteredOrders(filteredOrders.map(o => (o._id === updatedOrder._id ? response.data : o)));
       setSelectedOrder(null);
@@ -21,7 +21,7 @@ const ModalOrders = ({ order, setSelectedOrder, setOrders, setFilteredOrders, or
 
   const handleDeleteOrder = async () => {
     try {
-      await axios.delete(`http://localhost:5000/api/pedidos/${orderToDelete}`);
+      await axios.delete(`${import.meta.env.VITE_API_URL}/api/pedidos/${orderToDelete}`);
       setOrders(orders.filter(o => o._id !== orderToDelete));
       setFilteredOrders(filteredOrders.filter(o => o._id !== orderToDelete));
       setOrderToDelete(null);

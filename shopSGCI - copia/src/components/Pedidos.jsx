@@ -14,7 +14,7 @@ const Pedidos = () => {
     const fetchPedidos = async () => {
       try {
         // Realizamos una solicitud GET a la API para obtener los pedidos del cliente
-        const response = await axios.get(`http://localhost:5000/api/pedidos/cliente/${userId}`);
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/pedidos/cliente/${userId}`);
         // Ordenamos los pedidos por fecha de creación en orden descendente
         const sortedPedidos = response.data.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
         // Actualizamos el estado 'pedidos' con los datos obtenidos y ordenados de la API
@@ -49,7 +49,7 @@ const Pedidos = () => {
               <h3>Productos</h3>
               {pedido.pedido.map(item => (
                 <div key={item._id} className="pedido-item">
-                  <img src={`http://localhost:5000/uploads/${item.producto?.imagen}`} alt={item.producto?.nombre} className="product-image" />
+                  <img src={`${import.meta.env.VITE_API_URL}/uploads/${item.producto?.imagen}`} alt={item.producto?.nombre} className="product-image" />
                   <div className="item-details">
                     <p><strong>Producto:</strong> {item.producto?.nombre || 'Producto eliminado'}</p>
                     <p><strong>Cantidad:</strong> {item.cantidad}</p>

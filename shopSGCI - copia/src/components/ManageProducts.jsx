@@ -13,7 +13,7 @@ const ManageProducts = () => {
 
   const fetchProducts = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/api/productos');
+      const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/productos`);
       setProducts(response.data);
     } catch (error) {
       setErrorMessage('Error al obtener los productos');
@@ -26,7 +26,7 @@ const ManageProducts = () => {
 
   const handleDeleteProduct = async (id) => {
     try {
-      const response = await axios.delete(`http://localhost:5000/api/productos/${id}`);
+      const response = await axios.delete(`${import.meta.env.VITE_API_URL}/api/productos/${id}`);
       fetchProducts();
       setSuccessMessage(response.data.mensaje || 'Producto eliminado con éxito');
       setTimeout(() => setSuccessMessage(''), 1000);
@@ -48,7 +48,7 @@ const ManageProducts = () => {
   const handleSearch = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`http://localhost:5000/api/productos/busqueda/${searchQuery}`);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/productos/busqueda/${searchQuery}`);
       setProducts(response.data);
       if (response.data.length === 0) {
         setErrorMessage('No se encontraron productos');
@@ -92,7 +92,7 @@ const ManageProducts = () => {
               <td>${product.precio}</td>
               <td>{product.stock}</td>
               <td>
-                {product.imagen && <img src={`http://localhost:5000/uploads/${product.imagen}`} alt={product.nombre} width="100" />}
+                {product.imagen && <img src={`${import.meta.env.VITE_API_URL}/uploads/${product.imagen}`} alt={product.nombre} width="100" />}
               </td>
               <td>
                 <button className="edit-button" onClick={() => handleEditProduct(product)}>Editar</button>

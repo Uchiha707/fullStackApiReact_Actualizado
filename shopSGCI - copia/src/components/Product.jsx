@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 const Product = ({ product, onAddToCart }) => {
   const [quantity, setQuantity] = useState(1);
 
-  const imageURL = `http://localhost:5000/uploads/${product.imagen}`;
+  const imageURL = `${import.meta.env.VITE_API_URL}/uploads/${product.imagen}`;
 
   return (
     <div className="product">

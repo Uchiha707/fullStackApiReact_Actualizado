@@ -57,7 +57,7 @@ const App = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/productos');
+        const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/productos`);
         console.log('Productos desde la API:', response.data);
         // Mapeamos los productos antes de establecerlos en el estado
         const mappedProducts = response.data.map(mapProductData);

@@ -22,7 +22,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/auth/register', formData);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/auth/register`, formData);
       setMessage('Registro exitoso');
       localStorage.setItem('username', formData.username);
       window.dispatchEvent(new Event('storage')); // Disparar evento de almacenamiento

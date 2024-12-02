@@ -55,13 +55,13 @@ const ProductModal = ({ showModal, closeModal, fetchProducts, productToEdit }) =
     try {
       let response;
       if (productToEdit) {
-        response = await axios.put(`http://localhost:5000/api/productos/${productToEdit._id}`, formData, {
+        response = await axios.put(`${import.meta.env.VITE_API_URL}/api/productos/${productToEdit._id}`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
         });
       } else {
-        response = await axios.post('http://localhost:5000/api/productos', formData, {
+        response = await axios.post(`${import.meta.env.VITE_API_URL}/api/productos`, formData, {
           headers: {
             'Content-Type': 'multipart/form-data'
           }
